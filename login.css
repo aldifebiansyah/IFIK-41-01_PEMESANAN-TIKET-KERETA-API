@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+#header{
+	width:420px;
+	height:305px;
+	background-color:lightgray;
+	padding:70px 30px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	border-radius:10px;
+	box-sizing: border-box;
+	box-shadow: 4px 4px 6px black;
+}
+#header .Logo{
+	width:300px;
+	height:100px;
+	border-radius:30px;
+	top: -50px;
+	left: 60px;
+	position: absolute;
+	box-shadow: 4px 4px 6px black;
+}
+#header input{
+	width: 100%;
+	margin-bottom: 10px;
+}
+#header input[type="text"], input[type="password"]{
+	height: 40px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid black; 
+	outline: none;
+	color: black;	
+}
+#header input[type="submit"]{
+	height: 40px;
+	background-color: black;
+	outline: none;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	border: none;
+}
+#header input[type="submit"]:hover{
+	background-color:lightgray;
+	color: white;
+	cursor: pointer;
+}
+#header ul{
+	padding: 0;
+}
+#header ul li{
+	display:flex; 
+}
+#header ul li a{
+	padding: 0px 0px;
+	color: black;
+}
