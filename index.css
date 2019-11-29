@@ -1,3 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
 #header .Logo{
 	height: 67px;
   	width: 95px;
@@ -9,11 +11,50 @@
 }
 #header{
   	font-size:1.5em;
-  	text-align: center;
   	font-family: Comic Sans MS;
 	color: black;
+	border-radius: 14px;
 }
-
-li a{
+#header .title{
+	text-align: center;
+}
+#menu .atas{
+	text-align: right;
+	font-size:1.5em;
+  	font-family: Comic Sans MS;
+	color: black;
+	border-radius: 14px;
+}
+#menu .samping{
+	text-align: left;
+	font-size:1.5em;
+  	font-family: Comic Sans MS;
+	color: black;
+	border-radius: 14px;
+}
+ul li{
+	display:inline;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+ul li a{
 	text-decoration: none;
+	color: black;
+}
+ul{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+ul a{
+	text-decoration: none;
+	color: black;
+}
+#footer{
+ 	background: white;
+ 	height: 9%;
+  	font-size: 1em;
+  	text-align: center;
+  	border-radius: 14px;
+  	color: black;
+  	font-family: Comic Sans MS;
 }
