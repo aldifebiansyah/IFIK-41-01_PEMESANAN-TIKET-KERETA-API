@@ -1,80 +1,117 @@
 @charset "utf-8";
 /* CSS Document */
-#header .Logo{
-	position: relative;
-	height: 67px;
-  	width: 95px;
-  	float: left;
-  	font-family: Comic Sans MS;
-	border-radius: 14px;
-	border-shadow: 4px 4px 4px black;
-	color: black;
+#header {
+	background-color: #000000;
+	height: 5%px;
+	width: 100%;
 }
-#header{
-  	font-size:1.5em;
-  	font-family: Comic Sans MS;
-	color: black;
-	border-radius: 14px;
+
+#header .logo{;
+	height:100px;
+	width:120px;
 }
-#header .title{
-	position: relative;
-	text-align: center;
+
+#header ul {
+  margin: 25px;
+  padding: 0; 
 }
-#menu .atas{
-	position: relative;
-	text-align: right;
-	font-size:1.5em;
-  	font-family: Comic Sans MS;
-	color: black;
-	border-radius: 14px;
+
+#header li {
+  float: right;
 }
-#menu .samping{
-	position: relative;
-	text-align: left;
-	font-size:1.5em;
-  	font-family: Comic Sans MS;
-	color: black;
-	border-radius: 14px;
+
+#header li a {
+  display:block;
+  color: white;
+  text-align: center;
+  padding: 14px 35px;
+  text-decoration: none;
 }
-/**
-#content .avatar{
-	height: 93px;
-	width: 93px;
-	float: center;
-	font-family: Comic Sans MS;
-	color: black;
-}**/
+
+#header li a:hover {
+  background-color: #000000;
+  background-image:linear-gradient(#000000, #FF4500);
+  
+}
+
+#header .active {
+  background-color: #000000;
+}
+
+#header .menu-atas{
+	float:right;
+}
+
+#menu-samping ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #000000;
+  background-image:linear-gradient(#000000, #FFFFFF);
+  height: 90%;  
+  overflow: auto;
+  position:absolute;
+}
+
+#menu-samping li a {
+  display: block;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#menu-samping li a:hover {
+  background-color: #000000;
+  background-image: linear-gradient(#000000, #FF4500);
+  color: white;
+}
+
+#menu-samping .active {
+  background-color: #000000;
+  background-image: linear-gradient(#000000, #FF4500);
+  color: white;
+}
+
+#menu-samping li{
+	text-align:center;
+}
+
 #content{
-	/**position: absolute;
-	background-color: lightgrey;
-  	font-size: 1.5em;
-  	text-align: center;
-	color: black;
-  	font-family: Comic Sans MS;**/
+	width:75%;
+	float:right;
+	padding:15px;
+	background-color:#000;
+	background-image:linear-gradient(#000000, #FFFFFF);
+	margin-left:auto;
+	margin-right:auto;
+	height:90%;
 }
+
+#content .bg{
+	float:inherit;
+	opacity: 0.05;
+ 	filter: alpha(opacity=5);
+}
+
+@media screen and (max-width: 100%) {
+  #menu-samping, #content {
+    width: 100%;
+  }
+}
+
 #footer{
-	position: relative;
- 	background: white;
-  	font-size: 1em;
-  	text-align: center;
-  	border-radius: 14px;
-  	color: black;
-  	font-family: Comic Sans MS;
+  float:none;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: #FFFFFF;
+  background-image:linear-gradient(#FFFFFF, #000000);
+  height: 5%;  
+  overflow: auto;
+  position:relative
 }
-ul li{
-	display:inline;
-	margin-left: 15px;
-	margin-right: 15px;
-}
-ul li a{
-	text-decoration: none;
-	color: black;
-}
-ul{
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-ul a{
-	text-decoration: none;
-	color: black;
-}
+
+
+
