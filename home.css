@@ -86,7 +86,6 @@
 	margin-left:auto;
 	margin-right:auto;
 	height:90%;
-	color:#fff;
 }
 
 #content .bg{
@@ -95,100 +94,32 @@
  	filter: alpha(opacity=5);
 }
 
+.carousel{
+	position: absolute;
+	top:-730px;
+    margin:0 auto;
+	padding:0;
+	overflow:auto;
+	position:static;
+}
+.carousel .item{
+    min-height: 300px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+    max-height: 300px;
+    width:120%;
+}
+.bs-example{
+    margin:0 auto;
+}
 
 @media screen and (max-width: 100%) {
   #menu-samping, #content {
     width: 100%;
   }
 }
-form{
-	position:relative;
-	left:35%;
-	width:20%;
-	padding: 1em;
-  	background: transparent;
-	border: none;
-  	margin-top: 2rem;
-  	max-width: 20%;;
-  	margin-left: auto;
-  	margin-right: auto;
-  	padding: 1em;
-}
 
-#content input[type="text"]{
-	height:40px;
-	background:transparent;
-	border:none;
-	border-bottom:2px solid white;
-	outline:none;
-	color:#fff;
-	margin-bottom:2rem;
-}
-#content input[type="password"]{
-	height:40px;
-	background:transparent;
-	border:none;
-	border-bottom:2px solid white;
-	outline:none;
-	color:#fff;
-	margin-bottom:0;
-}
-
-a{
-	text-decoration:none;
-}
-
-#content .forgot-pass {
-    color: #ff4500;
-    font-family: "Raleway", sans-serif;
-    font-size: 10pt;
-    margin-top: 2px;
-	display:flex;
-	margin-bottom:2rem;
-}
-#content input[type="submit"]{
-	height: 40px;
-	background-color: transparent;
-	outline: none;
-	color: white;
-	font-size: 25px;
-	font-weight: bold;
-	border: none;
-}
-#content input[type="submit"]:hover{
-	background-color:#000;
-	background-image:linear-gradient(#000, #ff4500);
-	color: white;
-	cursor: pointer;
-}
-label {
-  text-align: right;
-  display: block;
-  padding: 0.5em 1.5em 0.5em 0;
-}
-
-@media (min-width: 400px) {
-  form {
-    overflow: hidden;
-  }
-
-  label {
-    float: left;
-    width: 10%;
-  }
-
-  input {
-    float: left;
-    width: calc(100% - 10%);
-  }
-  .forgot-pass{
-    width: calc(100% - 10%);
-  } 
-
-  submit {
-    width: calc(100% - 10%);
-  }
-}
 #footer{
   float:none;
   list-style-type: none;
