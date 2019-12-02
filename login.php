@@ -41,7 +41,6 @@
         <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table align="center" bgcolor="#0099FF">
   <div class="form-group">
-  <div class="form-group">
     <label for="email">Email :</label>
     <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
   </div>
