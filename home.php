@@ -28,7 +28,7 @@
     	<li><a href="#">Pemesanan</a></li>
         <li><a href="#">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="account.php">Pengaturan</a></li>
+        <li><a href="setting.php">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">

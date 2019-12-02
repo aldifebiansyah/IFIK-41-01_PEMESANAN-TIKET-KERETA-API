@@ -94,6 +94,38 @@
  	filter: alpha(opacity=5);
 }
 
+#content .pengaturan ul {
+  margin: auto;
+  padding: 0; 
+}
+
+#content .pengaturan li {
+	float:none;
+}
+
+#content .pengaturan li a {
+  display:block;
+  color: white;
+  text-align: center;
+  padding: 14px 35px;
+  text-decoration: none;
+}
+
+#content .pengaturan li a:hover {
+  background-color: #000000;
+  background-image:linear-gradient(#000000, #FF4500);
+  width:25%;
+  
+}
+
+#content .pengaturan .active {
+  background-color: transparent;
+}
+
+#content .pengaturan{
+	display:inline;
+}
+
 @media screen and (max-width: 100%) {
   #menu-samping, #content {
     width: 100%;

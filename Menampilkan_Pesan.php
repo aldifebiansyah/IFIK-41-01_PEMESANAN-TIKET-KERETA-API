@@ -79,7 +79,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     	<li><a href="#">Pemesanan</a></li>
         <li><a href="#">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="#">Pengaturan</a></li>
+        <li><a href="setting.php">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">

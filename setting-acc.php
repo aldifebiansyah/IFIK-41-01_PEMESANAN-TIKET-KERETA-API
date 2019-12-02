@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<link href="account.css" rel="stylesheet" type="text/css">
+	<link href="setting-acc.css" rel="stylesheet" type="text/css">
 <head>	
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +26,25 @@
     	<li><a href="#">Pemesanan</a></li>
         <li><a href="#">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="account.php">Pengaturan</a></li>
+        <li><a href="setting.php">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">
 	<img src="images/kereta api.png" class="bg">
-
+    <div class="pengaturan">
+    	<ul>
+            <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
+            <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
+   		</ul>
+    </div>
+    <div class="pengaturan-akun">
+    	<form>
+       		NIK<br><input type="text" placeholder="Masukkan NIK"><br>
+        	Nama Lengkap <input type="text" placeholder="Masukkan Nama lengkap" ><br>
+        	Email <input type="email" placeholder="Masukkan Email"><br>
+        <input type="submit" value="Simpan">
+        </form>
+    </div>
 </div>
 <div id="footer">
 	<p style="color:#fff;" align="center">Copyright © 2019 KeretaBisa All rights reserved.</p>

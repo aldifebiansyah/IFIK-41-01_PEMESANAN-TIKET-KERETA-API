@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 #header {
-	background-color: #000;
+	background-color: #000000;
 	height: 5%px;
 	width: 100%;
 }
@@ -55,7 +55,7 @@
 }
 
 #menu-samping li a {
-  display:block;
+  display: block;
   color: #FFFFFF;
   padding: 8px 16px;
   text-decoration: none;
@@ -86,7 +86,6 @@
 	margin-left:auto;
 	margin-right:auto;
 	height:90%;
-	color:#fff;
 }
 
 #content .bg{
@@ -95,12 +94,38 @@
  	filter: alpha(opacity=5);
 }
 
-
-@media screen and (max-width: 100%) {
-  #menu-samping, #content {
-    width: 100%;
-  }
+#content .pengaturan ul {
+  margin: auto;
+  padding: 0; 
 }
+
+#content .pengaturan li {
+	float:none;
+}
+
+#content .pengaturan li a {
+  display:block;
+  color: white;
+  text-align: center;
+  padding: 14px 35px;
+  text-decoration: none;
+}
+
+#content .pengaturan li a:hover {
+  background-color: #000000;
+  background-image:linear-gradient(#000000, #FF4500);
+  width:25%;
+  
+}
+
+#content .pengaturan .active {
+  background-color: transparent;
+}
+
+#content .pengaturan{
+	display:inline;
+}
+
 form{
 	position:relative;
 	left:35%;
@@ -113,39 +138,25 @@ form{
   	margin-left: auto;
   	margin-right: auto;
   	padding: 1em;
+	color:#ffffff;
 }
 
-#content input[type="text"]{
+label {
+  text-align: right;
+  display: block;
+  padding: 0.5em 1.5em 0.5em 0;
+}
+
+#content input[type="text"], input[type="email"]{
 	height:40px;
 	background:transparent;
 	border:none;
 	border-bottom:2px solid white;
 	outline:none;
-	color:#fff;
+	color:#ffffff;
 	margin-bottom:2rem;
-}
-#content input[type="password"]{
-	height:40px;
-	background:transparent;
-	border:none;
-	border-bottom:2px solid white;
-	outline:none;
-	color:#fff;
-	margin-bottom:0;
-}
+} 
 
-a{
-	text-decoration:none;
-}
-
-#content .forgot-pass {
-    color: #ff4500;
-    font-family: "Raleway", sans-serif;
-    font-size: 10pt;
-    margin-top: 2px;
-	display:flex;
-	margin-bottom:2rem;
-}
 #content input[type="submit"]{
 	height: 40px;
 	background-color: transparent;
@@ -156,15 +167,10 @@ a{
 	border: none;
 }
 #content input[type="submit"]:hover{
-	background-color:#000;
-	background-image:linear-gradient(#000, #ff4500);
+	background-color:#000000;
+	background-image:linear-gradient(#000000, #ff4500);
 	color: white;
 	cursor: pointer;
-}
-label {
-  text-align: right;
-  display: block;
-  padding: 0.5em 1.5em 0.5em 0;
 }
 
 @media (min-width: 400px) {
@@ -173,7 +179,7 @@ label {
   }
 
   label {
-    float: left;
+	  float:left;
     width: 10%;
   }
 
@@ -181,14 +187,18 @@ label {
     float: left;
     width: calc(100% - 10%);
   }
-  .forgot-pass{
-    width: calc(100% - 10%);
-  } 
 
   submit {
     width: calc(100% - 10%);
   }
 }
+
+@media screen and (max-width: 100%) {
+  #menu-samping, #content {
+    width: 100%;
+  }
+}
+
 #footer{
   float:none;
   list-style-type: none;

@@ -86,7 +86,6 @@
 	margin-left:auto;
 	margin-right:auto;
 	height:90%;
-	color:#fff;
 }
 
 #content .bg{
@@ -121,7 +120,6 @@
   }
 }
 
-}
 #footer{
   float:none;
   list-style-type: none;
