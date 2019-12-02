@@ -26,8 +26,8 @@
     
 <div id="menu-samping">
 	<ul>
-    	<li><a href="#">Pemesanan</a></li>
-        <li><a href="#">Jadwal</a></li>
+    	<li><a href="Pemesanan.php">Pemesanan</a></li>
+        <li><a href="schedule.php">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
         <li><a href="setting.php">Pengaturan</a></li>
     </ul>

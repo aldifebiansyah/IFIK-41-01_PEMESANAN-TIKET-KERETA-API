@@ -81,8 +81,8 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <div id="menu-samping">
 	<ul>
     	<li><a href="#">Pemesanan</a></li>
-        <li><a href="#">Jadwal</a></li>
-        <li><a href="ticket.php">Riwayat</a></li>
+        <li><a href="schedule.php">Jadwal</a></li>
+        <li><a href="#">Riwayat</a></li>
         <li><a href="#">Pengaturan</a></li>
     </ul>
 </div>
