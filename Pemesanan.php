@@ -49,7 +49,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<link href="Pemesanan.css" rel="stylesheet" type="text/css">
+	<link href="index.css" rel="stylesheet" type="text/css">
 <head>	
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +76,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     
 <div id="menu-samping">
 	<ul>
-    	<li><a href="#">Pemesanan</a></li>
+    	<li><a href="Pemesanan.php">Pemesanan</a></li>
         <li><a href="#">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
         <li><a href="setting.php">Pengaturan</a></li>
@@ -90,8 +90,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
 <form>
   <div class="form-group">
-      <label for="inputState"><font color="#FFFFFF">Nama Kereta</font></label>
-      <select id="inputState" class="form-control">
+      <label for="inputNKereta"><font color="#FFFFFF">Nama Kereta</font></label>
+      <select id="inputNKereta" class="form-control">
         <option selected>Serayu</option>
         <option>Kahuripan</option>
         <option>Bima</option>
@@ -100,8 +100,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
       </select>
   </div>
   <div class="form-group">
-      <label for="inputState"><font color="#FFFFFF">Class Kereta</font></label>
-      <select id="inputState" class="form-control">
+      <label for="inputCKereta"><font color="#FFFFFF">Class Kereta</font></label>
+      <select id="inputCKereta" class="form-control">
         <option selected>Ekonomi</option>
         <option>Bisnis</option>
         <option>Priority</option>
@@ -109,34 +109,33 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         <option>Sleeper</option>
       </select>
   </div>
+  <div class="form-group">
+      <label for="inputJam"><font color="#FFFFFF">Jam Keberangkatan</font></label>
+      <select id="inputJam" class="form-control">
+        <option selected>08:00</option>
+        <option>10:00</option>
+        <option>12:00</option>
+        <option>14:00</option>
+        <option>16:00</option>
+        <option>18:00</option>
+        <option>20:00</option>
+        <option>22:00</option>
+      </select>
+  </div>
    <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputTahunKeberangkatan"><font color="#FFFFFF">Tahun Keberangkatan</font></label>
-      <input type="date" class="form-control" id="inputTahunKeberangkatan" placeholder="2017">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputBulanKeberangkatan"><font color="#FFFFFF">Bulan Keberangkatan</font></label>
-      <input type="date" class="form-control" id="inputBulanKeberangkatan" placeholder="Februari">
-    </div>
-    <div class="form-group col-md-4">
+    <div class="form-group">
       <label for="inputTanggalKeberangkatan"><font color="#FFFFFF">Tanggal Keberangkatan</font></label>
-      <input type="date" class="form-control" id="inputTanggalKeberangkatan" placeholder="28">
+      <input type="date" class="form-control" id="inputTanggalKeberangkatan" placeholder="2017-02-28">
     </div>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputTahunKedatangan"><font color="#FFFFFF">Tahun Kedatangan</font></label>
-      <input type="date" class="form-control" id="inputTahunKedatangan" placeholder="2017">
+  <div class="form-group">
+      <label for="inputKotaAsal"><font color="#FFFFFF">Kota Asal</font></label>
+      <input type="text" class="form-control" id="inputKotaAsal" placeholder="Bandung">
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputBulanKedatangan"><font color="#FFFFFF">Bulan Kedatangan</font></label>
-      <input type="date" class="form-control" id="inputBulanKedatangan" placeholder="Maret">
+    <div class="form-group">
+      <label for="inputKotaTujuan"><font color="#FFFFFF">Kota Tujuan</font></label>
+      <input type="text" class="form-control" id="inputKotaTujuan" placeholder="Jakarta">
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputTanggalKedatangan"><font color="#FFFFFF">Tanggal Kedatangan</font></label>
-      <input type="date" class="form-control" id="inputTanggalKedatangan" placeholder="01">
-    </div>
-  </div>
    <div class="form-group">
      <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
