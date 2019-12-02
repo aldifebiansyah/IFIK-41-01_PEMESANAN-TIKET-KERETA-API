@@ -36,13 +36,32 @@
 	<img src="images/kereta api.png" class="bg">
      <div class="bs-example">
 	<div class="col-md-8 col-md-offset-2">
-	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pengaturan</h2></div>
+    	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pengaturan Akun</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-     <div class="pengaturan">
-    	<ul>
-            <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
-            <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
-   		</ul>
+         <div class="pengaturan-akun">
+          <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+  <table align="center" bgcolor="#0099FF">
+  <div class="form-group">
+    <label for="noktp">No KTP :</label>
+    <input type="text" class="form-control" name="nik" value="" id="noktp" aria-describedby="emailHelp">
+  </div>
+
+  <div class="form-group">
+    <label for="nama">Nama Lengkap :</label>
+    <input type="text" class="form-control" name="nama" value="" id="nama" aria-describedby="emailHelp">
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email :</label>
+    <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
+  </div>
+
+  <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
+
+  </table>
+  <input type="hidden" name="MM_insert" value="form1" />
+</form>   
+		</div>
     </div>
 </div>
 </div>
