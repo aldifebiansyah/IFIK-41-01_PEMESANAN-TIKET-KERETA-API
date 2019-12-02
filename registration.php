@@ -37,17 +37,23 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO registrasi (nik, nama, email, alamat) VALUES (%s, %s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO registrasi (nik, nama, email, alamat, password) VALUES (%s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['nik'], "text"),
                        GetSQLValueString($_POST['nama'], "text"),
                        GetSQLValueString($_POST['email'], "text"),
-                       GetSQLValueString($_POST['alamat'], "text"));
+                       GetSQLValueString($_POST['alamat'], "text"),
+                       GetSQLValueString($_POST['password'], "text"));
 
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
 }
-?>
 
+mysql_select_db($database_koneksi, $koneksi);
+$query_Recordset1 = "SELECT * FROM registrasi";
+$Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
+$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<link href="index.css" rel="stylesheet" type="text/css">
@@ -90,36 +96,35 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Registrasi</h2></div>
   <br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table align="center" bgcolor="#0099FF">
   <div class="form-group">
     <label for="noktp">No KTP :</label>
     <input type="text" class="form-control" name="nik" value="" id="noktp" aria-describedby="emailHelp">
   </div>
-
   <div class="form-group">
     <label for="nama">Nama :</label>
     <input type="text" class="form-control" name="nama" value="" id="nama" aria-describedby="emailHelp">
   </div>
-  
   <div class="form-group">
     <label for="email">Email :</label>
     <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
   </div>
-
   <div class="form-group">
     <label for="alamat">Alamat :</label>
     <input type="text" class="form-control" name="alamat" value="" id="alamat" aria-describedby="emailHelp">
   </div>
-
+  <div class="form-group">
+    <label for="password">Password :</label>
+    <input type="text" class="form-control" name="password" value="" id="password" aria-describedby="emailHelp">
+  </div>
   <button type="submit" value="Daftar" class="btn btn-primary">Daftar</button>
 
-  </table>
-  <input type="hidden" name="MM_insert" value="form1" />
-</form>
-     
-   		 </div>
+        </table>
+        <input type="hidden" name="MM_insert" value="form1">
+      </form>
+      <p>&nbsp;</p>
+    </div>
 </div>
 </div>
 </div>
@@ -128,3 +133,6 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 </div>
 </body>
 </html>
+<?php
+mysql_free_result($Recordset1);
+?>
