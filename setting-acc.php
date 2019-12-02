@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<link href="setting-acc.css" rel="stylesheet" type="text/css">
+	<link href="index.css" rel="stylesheet" type="text/css">
 <head>	
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,9 @@
 <meta name="author" content="Wino Rama Putra" >
 <meta name="description" content="ini adalah website booking kereta api">
 <title>KeretaBisa</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -31,21 +34,44 @@
 </div>
 <div id="content">
 	<img src="images/kereta api.png" class="bg">
-    <div class="pengaturan">
+    <div class="bs-example">
+	<div class="col-md-8 col-md-offset-2">
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pengaturan Akun</h2></div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="pengaturan">
     	<ul>
             <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
             <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
    		</ul>
     </div>
     <div class="pengaturan-akun">
-    	<form>
-       		NIK<br><input type="text" placeholder="Masukkan NIK"><br>
-        	Nama Lengkap <input type="text" placeholder="Masukkan Nama lengkap" ><br>
-        	Email <input type="email" placeholder="Masukkan Email"><br>
-        <input type="submit" value="Simpan">
-        </form>
-    </div>
+    	<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+  <table align="center" bgcolor="#0099FF">
+  <div class="form-group">
+    <label for="noktp">No KTP :</label>
+    <input type="text" class="form-control" name="nik" value="" id="noktp" aria-describedby="emailHelp">
+  </div>
+
+  <div class="form-group">
+    <label for="nama">Nama Lengkap :</label>
+    <input type="text" class="form-control" name="nama" value="" id="nama" aria-describedby="emailHelp">
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email :</label>
+    <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
+  </div>
+
+  <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
+
+  </table>
+  <input type="hidden" name="MM_insert" value="form1" />
+</form>    </div>
 </div>
+</div>
+</div>
+</div>
+    
 <div id="footer">
 	<p style="color:#fff;" align="center">Copyright © 2019 KeretaBisa All rights reserved.</p>
 </div>

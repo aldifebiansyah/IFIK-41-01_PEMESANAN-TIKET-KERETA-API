@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<link href="setting.css" rel="stylesheet" type="text/css">
+	<link href="index.css" rel="stylesheet" type="text/css">
 <head>	
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,9 @@
 <meta name="author" content="Wino Rama Putra" >
 <meta name="description" content="ini adalah website booking kereta api">
 <title>KeretaBisa</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -31,13 +34,21 @@
 </div>
 <div id="content">
 	<img src="images/kereta api.png" class="bg">
-    <div class="pengaturan">
+     <div class="bs-example">
+	<div class="col-md-8 col-md-offset-2">
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pengaturan</h2></div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+     <div class="pengaturan">
     	<ul>
             <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
             <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
    		</ul>
     </div>
 </div>
+</div>
+</div>
+</div>
+  
 <div id="footer">
 	<p style="color:#fff;" align="center">Copyright © 2019 KeretaBisa All rights reserved.</p>
 </div>

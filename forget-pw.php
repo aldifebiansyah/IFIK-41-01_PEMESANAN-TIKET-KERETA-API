@@ -12,14 +12,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
 </head>
 <body>
 <div id="header">
     	<img src="images/Logo.jpg" class="logo" alt="KitaBisa">
         <div class="menu-atas">
         	<ul>
-            	<li><a class="active" href="index.php">Keluar</a></li>
-                <li><a class="active" href="home.php">Beranda</a></li>
+            	<li><a class="active" href="registration.php">Daftar</a></li>
+     			<li><a class="active" href="login.php">Masuk</a></li>
    		    </ul>
         </div>
 </div>
@@ -29,33 +30,30 @@
     	<li><a href="#">Pemesanan</a></li>
         <li><a href="#">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="setting.php">Pengaturan</a></li>
+        <li><a href="#">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">
 	<img src="images/kereta api.png" class="bg">
-     <div class="bs-example">
+    <div class="bs-example">
 	<div class="col-md-8 col-md-offset-2">
-	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Ubah Kata Sandi</h2></div>
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Dapatkan Kata Sandi</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="pengaturan">
-    	<ul>
-            <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
-            <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
-   		</ul>
-    </div>
-    <div class="pengaturan-ks">
-    	<form>
-       		Masukkan Kata Sandi <input type="password" placeholder="Masukkan Kata Sandi Baru" ><br>
-        	Ulangi Kata Sandi <input type="password" placeholder="Masukkan Kata Sandi Lagi"><br>
-        <input type="submit" value="Simpan">
-        </form>
-    </div>
+        <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+  <table align="center" bgcolor="#0099FF">
+  <div class="form-group">
+    <label for="email">Masukkan Email :</label>
+    <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" value="Daftar" class="btn btn-primary">Dapatkan Kata Sandi</button>
+  </table>
+  <input type="hidden" name="MM_insert" value="form1" />
+</form>
 </div>
 </div>
 </div>
+
 </div>
-    
 <div id="footer">
 	<p style="color:#fff;" align="center">Copyright © 2019 KeretaBisa All rights reserved.</p>
 </div>

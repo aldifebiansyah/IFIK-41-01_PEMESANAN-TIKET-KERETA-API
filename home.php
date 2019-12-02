@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<link href="home.css" rel="stylesheet" type="text/css">
+	<link href="index.css" rel="stylesheet" type="text/css">
 <head>	
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
