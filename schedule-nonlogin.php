@@ -12,7 +12,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
 </head>
 <body>
 <div id="header">
@@ -20,25 +19,48 @@
         <div class="menu-atas">
         	<ul>
             	<li><a class="active" href="registration.php">Daftar</a></li>
-     			<li><a class="active" href="login.php">Masuk</a></li>
+                <li><a class="active" href="login.php">Masuk</a></li>
    		    </ul>
         </div>
 </div>
     
 <div id="menu-samping">
 	<ul>
-    	<li><a href="Pemesanan.php">Pemesanan</a></li>
-        <li><a href="schedule.php">Jadwal</a></li>
-        <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="setting.php">Pengaturan</a></li>
+    	<li><a href="non-login.php">Pemesanan</a></li>
+        <li><a href="schedule-nonlogin.php">Jadwal</a></li>
+        <li><a href="non-login.php">Riwayat</a></li>
+        <li><a href="non-login.php">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">
 	<img src="images/kereta api.png" class="bg">
     <div class="bs-example">
 	<div class="col-md-8 col-md-offset-2">
-	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Hasil</h2></div>
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Jadwal</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    	<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Nama Kereta</th>
+      <th scope="col">Kelas Kereta</th>
+      <th scope="col">Tanggal Keberangkatan</th>
+      <th scope="col">Tanggal Kedatangan</th>
+      <th scope="col">Harga</th>
+     </tr>
+  </thead>
+          <?php do { ?>
+            <tr>
+              <td><?php echo $row_Recordset1['nama_kereta']; ?></td>
+              <td><?php echo $row_Recordset1['kelas_kereta']; ?></td>
+              <td><?php echo $row_Recordset1['tgl_keberangkatan']; ?></td>
+              <td><?php echo $row_Recordset1['tgl_kedatangan']; ?></td>
+              <td><?php echo $row_Recordset1['harga']; ?></td>
+              </tr>
+            <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+        </table>  
+</div>        
+</div>
+</div>
 </div>
 <div id="footer">
 	<p style="color:#fff;" align="center">Copyright © 2019 KeretaBisa All rights reserved.</p>

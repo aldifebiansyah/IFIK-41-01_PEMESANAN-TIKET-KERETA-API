@@ -77,10 +77,10 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     
 <div id="menu-samping">
 	<ul>
-    	<li><a href="#">Pemesanan</a></li>
-        <li><a href="schedule.php">Jadwal</a></li>
-        <li><a href="#">Riwayat</a></li>
-        <li><a href="#">Pengaturan</a></li>
+    	<li><a href="non-login.php">Pemesanan</a></li>
+        <li><a href="schedule-nonlogin.php">Jadwal</a></li>
+        <li><a href="non-login.php">Riwayat</a></li>
+        <li><a href="non-login.php">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">

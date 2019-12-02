@@ -27,18 +27,22 @@
     
 <div id="menu-samping">
 	<ul>
-    	<li><a href="Pemesanan.php">Pemesanan</a></li>
-        <li><a href="schedule.php">Jadwal</a></li>
-        <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="setting.php">Pengaturan</a></li>
+    	<li><a href="#">Pemesanan</a></li>
+        <li><a href="schedule-nonlogin.php">Jadwal</a></li>
+        <li><a href="#">Riwayat</a></li>
+        <li><a href="#">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">
 	<img src="images/kereta api.png" class="bg">
     <div class="bs-example">
 	<div class="col-md-8 col-md-offset-2">
-	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Hasil</h2></div>
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Akun Belum Terhubung!</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	    <h3>Silahkan Masuk atau Daftar terlebih dahulu.</h3>    
+	</div>
+</div>
+</div>
 </div>
 <div id="footer">
 	<p style="color:#fff;" align="center">Copyright © 2019 KeretaBisa All rights reserved.</p>
