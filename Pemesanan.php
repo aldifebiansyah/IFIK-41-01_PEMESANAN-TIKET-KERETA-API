@@ -54,7 +54,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scalle=1.0">
-<meta name="author" content="Wino Rama Putra" >
+<meta name="author" content="Aldi Febiansyah" >
 <meta name="description" content="ini adalah website booking kereta api">
 <title>KeretaBisa</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -77,7 +77,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 <div id="menu-samping">
 	<ul>
     	<li><a href="Pemesanan.php">Pemesanan</a></li>
+<<<<<<< HEAD
         <li><a href="#">Jadwal</a></li>
+=======
+        <li><a href="schedule.php">Jadwal</a></li>
+>>>>>>> 87ac0ef7aaa25a184665a56903eabc78e9f118e4
         <li><a href="ticket.php">Riwayat</a></li>
         <li><a href="setting.php">Pengaturan</a></li>
     </ul>

@@ -1,3 +1,56 @@
+<?php require_once('Connections/koneksi.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
+  $insertSQL = sprintf("INSERT INTO pengaturan_pass (password, verifikasi_pass) VALUES (%s, %s)",
+                       GetSQLValueString($_POST['password'], "text"),
+                       GetSQLValueString($_POST['verifikasi_pass'], "text"));
+
+  mysql_select_db($database_koneksi, $koneksi);
+  $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
+}
+
+mysql_select_db($database_koneksi, $koneksi);
+$query_Recordset1 = "SELECT * FROM pengaturan_pass";
+$Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
+$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<link href="index.css" rel="stylesheet" type="text/css">
@@ -39,23 +92,24 @@
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Ubah Kata Sandi</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="pengaturan-ks">
-    	        <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
-  <table align="center" bgcolor="#0099FF">
-  <div class="form-group">
-    <label for="pasword">Kata Sandi :</label>
-    <input type="text" class="form-control" name="katasandi" value="katasandi" id="katasandi" aria-describedby="emailHelp">
-  </div>
-
-  <div class="form-group">
-    <label for="passwordL">Kata Sandi :</label>
-    <input type="text" class="form-control" name="katasandiL" value="" id="katasandiL" aria-describedby="emailHelp">
-  </div>
-
-  <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
-
-  </table>
-  <input type="hidden" name="MM_insert" value="form1" />
-</form>
+      <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+        <table align="center">
+          <tr valign="baseline">
+            <td nowrap align="right">Password:</td>
+            <td><input type="text" name="password" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Verifikasi:</td>
+            <td><input type="text" name="verifikasi_pass" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">&nbsp;</td>
+            <td><input type="submit" value="Simpan"></td>
+          </tr>
+        </table>
+        <input type="hidden" name="MM_insert" value="form1">
+      </form>
+      <p>&nbsp;</p>
     </div>
 </div>
 </div>
@@ -67,3 +121,6 @@
 </div>
 </body>
 </html>
+<?php
+mysql_free_result($Recordset1);
+?>
