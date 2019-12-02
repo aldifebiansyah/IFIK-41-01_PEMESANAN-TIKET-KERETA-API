@@ -93,11 +93,13 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Hasil</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <table border="1">
+      <table class="table table-bordered table-dark">
+      <thead>
         <tr>
-          <td>Kode Pemesanan</td>
-          <td>Harga</td>
+          <th scope="col">Kode Pemesanan</th>
+          <th scope="col">Harga</th>
         </tr>
+       </thead>
         <?php do { ?>
           <tr>
             <td><?php echo $row_Recordset1['kode_pemesanan']; ?></td>
