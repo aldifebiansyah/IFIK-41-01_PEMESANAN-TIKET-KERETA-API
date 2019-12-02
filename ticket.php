@@ -52,8 +52,6 @@ if (isset($_GET['totalRows_Recordset1'])) {
 }
 $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<link href="index.css" rel="stylesheet" type="text/css">
@@ -96,36 +94,35 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Riwayat</h2></div>
   <br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-           
     <table class="table table-bordered table-dark">
   <thead>
     <tr>
       <th scope="col">Kode Pemesanan</th>
       <th scope="col">Nama</th>
       <th scope="col">Nama Kereta</th>
-      <th scope="col">Kelas Kereta</th>
-      <th scope="col">Tanggal Keberangkatan</th>
+      <th scope="col">Kota Asal</th>
+      <th scope="col">Kota Tujuan</th>
+      <th scope="col">Jam Kedatangan</th>
       <th scope="col">Tanggal Kedatangan</th>
+      <th scope="col">Kelas Kereta</th>
       <th scope="col">Harga</th>
-      <th scope="col">Keterangan</th>
     </tr>
   </thead>
-          <?php do { ?>
-            <tr>
-              <td><?php echo $row_Recordset1['kode_pemesanan']; ?></td>
-              <td><?php echo $row_Recordset1['nama']; ?></td>
-              <td><?php echo $row_Recordset1['nama_kereta']; ?></td>
-              <td><?php echo $row_Recordset1['kelas_kereta']; ?></td>
-              <td><?php echo $row_Recordset1['tgl_keberangkatan']; ?></td>
-              <td><?php echo $row_Recordset1['tgl_kedatangan']; ?></td>
-              <td><?php echo $row_Recordset1['harga']; ?></td>
-              <td><?php echo $row_Recordset1['ket']; ?></td>
-            </tr>
-            <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
-        </table>
-     
-   		 </div>
+        <?php do { ?>
+          <tr>
+            <td><?php echo $row_Recordset1['kode_pemesanan']; ?></td>
+            <td><?php echo $row_Recordset1['nama']; ?></td>
+            <td><?php echo $row_Recordset1['nama_kereta']; ?></td>
+            <td><?php echo $row_Recordset1['kota_asal']; ?></td>
+            <td><?php echo $row_Recordset1['kota_tujuan']; ?></td>
+            <td><?php echo $row_Recordset1['jam_keberangkatan']; ?></td>
+            <td><?php echo $row_Recordset1['tgl_keberangkatan']; ?></td>
+            <td><?php echo $row_Recordset1['kelas_kereta']; ?></td>
+            <td><?php echo $row_Recordset1['harga']; ?></td>
+          </tr>
+          <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
+      </table>
+    </div>
 </div>
 </div>
 </div>
@@ -134,3 +131,6 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 </div>
 </body>
 </html>
+<?php
+mysql_free_result($Recordset1);
+?>

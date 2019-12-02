@@ -1,3 +1,57 @@
+<?php require_once('Connections/koneksi.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
+  $updateSQL = sprintf("UPDATE registrasi SET nama=%s, email=%s WHERE nik=%s",
+                       GetSQLValueString($_POST['nama'], "text"),
+                       GetSQLValueString($_POST['email'], "text"),
+                       GetSQLValueString($_POST['nik'], "text"));
+
+  mysql_select_db($database_koneksi, $koneksi);
+  $Result1 = mysql_query($updateSQL, $koneksi) or die(mysql_error());
+}
+
+mysql_select_db($database_koneksi, $koneksi);
+$query_Recordset1 = "SELECT * FROM registrasi";
+$Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
+$row_Recordset1 = mysql_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<link href="index.css" rel="stylesheet" type="text/css">
@@ -39,29 +93,30 @@
     	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pengaturan Akun</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
          <div class="pengaturan-akun">
-          <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
-  <table align="center" bgcolor="#0099FF">
-  <div class="form-group">
-    <label for="noktp">No KTP :</label>
-    <input type="text" class="form-control" name="nik" value="" id="noktp" aria-describedby="emailHelp">
-  </div>
-
-  <div class="form-group">
-    <label for="nama">Nama Lengkap :</label>
-    <input type="text" class="form-control" name="nama" value="" id="nama" aria-describedby="emailHelp">
-  </div>
-  
-  <div class="form-group">
-    <label for="email">Email :</label>
-    <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
-  </div>
-
-  <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
-
-  </table>
-  <input type="hidden" name="MM_insert" value="form1" />
-</form>   
-		</div>
+           <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+             <table align="center">
+               <tr valign="baseline">
+                 <td nowrap align="right">No KTP:</td>
+                 <td><?php echo $row_Recordset1['nik']; ?></td>
+               </tr>
+               <tr valign="baseline">
+                 <td nowrap align="right">Nama:</td>
+                 <td><input type="text" name="nama" value="<?php echo htmlentities($row_Recordset1['nama'], ENT_COMPAT, 'utf-8'); ?>" size="32"></td>
+               </tr>
+               <tr valign="baseline">
+                 <td nowrap align="right">Email:</td>
+                 <td><input type="text" name="email" value="<?php echo htmlentities($row_Recordset1['email'], ENT_COMPAT, 'utf-8'); ?>" size="32"></td>
+               </tr>
+               <tr valign="baseline">
+                 <td nowrap align="right">&nbsp;</td>
+                 <td><input type="submit" value="Perbarui"></td>
+               </tr>
+             </table>
+             <input type="hidden" name="MM_update" value="form1">
+             <input type="hidden" name="nik" value="<?php echo $row_Recordset1['nik']; ?>">
+           </form>
+           <p>&nbsp;</p>
+         </div>
     </div>
 </div>
 </div>
@@ -73,3 +128,6 @@
 </div>
 </body>
 </html>
+<?php
+mysql_free_result($Recordset1);
+?>
