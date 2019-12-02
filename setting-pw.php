@@ -38,18 +38,24 @@
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Ubah Kata Sandi</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="pengaturan">
-    	<ul>
-            <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
-            <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
-   		</ul>
-    </div>
     <div class="pengaturan-ks">
-    	<form>
-       		Masukkan Kata Sandi <input type="password" placeholder="Masukkan Kata Sandi Baru" ><br>
-        	Ulangi Kata Sandi <input type="password" placeholder="Masukkan Kata Sandi Lagi"><br>
-        <input type="submit" value="Simpan">
-        </form>
+    	        <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+  <table align="center" bgcolor="#0099FF">
+  <div class="form-group">
+    <label for="pasword">Kata Sandi :</label>
+    <input type="text" class="form-control" name="katasandi" value="katasandi" id="katasandi" aria-describedby="emailHelp">
+  </div>
+
+  <div class="form-group">
+    <label for="passwordL">Kata Sandi :</label>
+    <input type="text" class="form-control" name="katasandiL" value="" id="katasandiL" aria-describedby="emailHelp">
+  </div>
+
+  <button type="submit" value="Simpan" class="btn btn-primary">Simpan</button>
+
+  </table>
+  <input type="hidden" name="MM_insert" value="form1" />
+</form>
     </div>
 </div>
 </div>

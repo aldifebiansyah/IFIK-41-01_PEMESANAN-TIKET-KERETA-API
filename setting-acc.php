@@ -38,13 +38,7 @@
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pengaturan Akun</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="pengaturan">
-    	<ul>
-            <li><a class="active" href="setting-acc.php">Pengaturan Akun</a></li>
-            <li><a class="active" href="setting-pw.php">Ubah Kata Sandi</a></li>
-   		</ul>
-    </div>
-    <div class="pengaturan-akun">
+         <div class="pengaturan-akun">
     	<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table align="center" bgcolor="#0099FF">
   <div class="form-group">
