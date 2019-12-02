@@ -37,7 +37,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO login (email, password) VALUES (%s, %s)",
+  $insertSQL = sprintf("INSERT INTO registrasi (email, password) VALUES (%s, %s)",
                        GetSQLValueString($_POST['email'], "text"),
                        GetSQLValueString($_POST['password'], "text"));
 
@@ -46,7 +46,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 }
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_Recordset1 = "SELECT * FROM login";
+$query_Recordset1 = "SELECT * FROM registrasi";
 $Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
@@ -92,24 +92,25 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Login</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
-      <table align="center">
-        <tr valign="baseline">
-          <td nowrap align="right">Email:</td>
-          <td><input type="text" name="email" value="" size="32"></td>
-        </tr>
-        <tr valign="baseline">
-          <td nowrap align="right">Password:</td>
-          <td><input type="text" name="password" value="" size="32"></td>
-        </tr>
-        <tr valign="baseline">
-          <td nowrap align="right">&nbsp;</td>
-          <td><input type="submit" value="Login"></td>
-        </tr>
-      </table>
-      <input type="hidden" name="MM_insert" value="form1">
-  </form>
-</div>
+      <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+        <table align="center">
+          <tr valign="baseline">
+            <td nowrap align="right">Email:</td>
+            <td><input type="text" name="email" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Password:</td>
+            <td><input type="text" name="password" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">&nbsp;</td>
+            <td><input type="submit" value="Login"></td>
+          </tr>
+        </table>
+        <input type="hidden" name="MM_insert" value="form1">
+      </form>
+      <p>&nbsp;</p>
+    </div>
 </div>
 </div>
 </div>
@@ -118,3 +119,6 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 </div>
 </body>
 </html>
+<?php
+mysql_free_result($Recordset1);
+?>
