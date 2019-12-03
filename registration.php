@@ -118,7 +118,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <label for="password">Password :</label>
     <input type="text" class="form-control" name="password" value="" id="password" aria-describedby="emailHelp">
   </div>
-  <button type="submit" value="Daftar" class="btn btn-dark">Daftar</button>
+  <button type="submit" value="Daftar" class="btn btn-primary">Daftar</button>
 
         </table>
         <input type="hidden" name="MM_insert" value="form1">

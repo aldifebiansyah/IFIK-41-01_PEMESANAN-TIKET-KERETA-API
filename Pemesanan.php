@@ -162,7 +162,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
         <option>Ekonomi</option>
       </select>
     </div>
-  <button type="submit" value="Pesan" class="btn btn-dark">Cari</button>
+  <button type="submit" value="Pesan" class="btn btn-primary">Pesan</button>
 </form>
         </table>
         <input type="hidden" name="MM_insert" value="form1">

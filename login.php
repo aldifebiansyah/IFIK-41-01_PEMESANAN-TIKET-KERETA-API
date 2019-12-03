@@ -92,20 +92,20 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Masuk</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
-        <table align="center">
-          <tr valign="baseline">
-            <td nowrap align="right">Email:</td>
-            <td><input type="text" name="email" value="" size="32"></td>
-          </tr>
-          <tr valign="baseline">
-            <td nowrap align="right">Password:</td>
-            <td><input type="text" name="password" value="" size="32"></td>
-          </tr>
-          <tr valign="baseline">
-            <td nowrap align="right">&nbsp;</td>
-            <td><input type="submit" value="Masuk"></td>
-          </tr>
+    <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+  <table align="center" bgcolor="#0099FF">
+  <div class="form-group">
+    <label for="email">Email :</label>
+    <input type="text" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password :</label>
+    <input type="text" class="form-control" name="password" value="" id="password" aria-describedby="emailHelp">
+  </div>
+  <a href="forget-pw.php" style="float:right;color:red">Lupa Kata Sandi !!</a> <br>
+  <button type="submit" value="login" class="btn btn-primary">Login</button>
+
         </table>
         <input type="hidden" name="MM_insert" value="form1">
       </form>
