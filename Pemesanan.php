@@ -31,46 +31,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-$editFormAction = $_SERVER['PHP_SELF'];
-if (isset($_SERVER['QUERY_STRING'])) {
-  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
-}
-
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO jadwal (nama_kereta, kota_asal, kota_tujuan, jam_keberangkatan, tgl_keberangkatan, kelas_kereta) VALUES (%s, %s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['nama_kereta'], "text"),
-                       GetSQLValueString($_POST['kota_asal'], "text"),
-                       GetSQLValueString($_POST['kota_tujuan'], "text"),
-                       GetSQLValueString($_POST['jam_keberangkatan'], "text"),
-                       GetSQLValueString($_POST['tgl_keberangkatan'], "text"),
-                       GetSQLValueString($_POST['kelas_kereta'], "text"));
-
-  mysql_select_db($database_koneksi, $koneksi);
-  $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
-}
-
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO jadwal (nama_kereta, kota_asal, kota_tujuan, jam_keberangkatan, tgl_keberangkatan, kelas_kereta) VALUES (%s, %s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['nama_kereta'], "text"),
-                       GetSQLValueString($_POST['kota_asal'], "text"),
-                       GetSQLValueString($_POST['kota_tujuan'], "text"),
-                       GetSQLValueString($_POST['jam_keberangkatan'], "text"),
-                       GetSQLValueString($_POST['tgl_keberangkatan'], "text"),
-                       GetSQLValueString($_POST['kelas_kereta'], "text"));
-
-  mysql_select_db($database_koneksi, $koneksi);
-  $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
-
-  $insertGoTo = "Hasil_Pemesanan.php";
-  if (isset($_SERVER['QUERY_STRING'])) {
-    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-    $insertGoTo .= $_SERVER['QUERY_STRING'];
-  }
-  header(sprintf("Location: %s", $insertGoTo));
-}
-
 mysql_select_db($database_koneksi, $koneksi);
-$query_Recordset1 = "SELECT * FROM jadwal";
+$query_Recordset1 = "SELECT jadwal.nama_kereta, jadwal.kota_asal, jadwal.kota_tujuan, jadwal.jam_keberangkatan, jadwal.tgl_keberangkatan, jadwal.kelas_kereta FROM jadwal";
 $Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
@@ -116,54 +78,108 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pemesanan</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
       <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
-        <table align="center" bgcolor="transparent">
-  <div class="form-group col">
-      <label for="inputState">Nama Kereta</label>
-      <select id="inputState" class="form-control">
-        <option selected>Kahuripan</option>
-        <option>Pasundan</option>
-        <option>Serayu</option>
-        <option>Jayabaya</option>
-        <option>Argo willis</option>
-      </select>
-    </div>
-<div class="form-group">
-    <label for="kota_asal">Kota Asal</label>
-    <input type="text" class="form-control" name="kota_asal" value="" id="kota_asal" aria-describedby="emailHelp">
-  </div>
-<div class="form-group">
-    <label for="kota_tujuan">Kota Tujuan</label>
-    <input type="text" class="form-control" name="kota_tujuan" value="" id="kota_tujuan" aria-describedby="emailHelp">
-  </div>
-    <div class="form-group col">
-      <label for="jam_keberangkatan">Jam Keberangkatan</label>
-      <select id="jam_keberangkatan" class="form-control">
-        <option selected>08:00</option>
-        <option>10:00</option>
-        <option>12:00</option>
-        <option>14:00</option>
-        <option>15:00</option>
-        <option>17:00</option>
-        <option>18:00</option>
-        <option>20:00</option>
-      </select>
-    </div>
-    <div class="form-group">
-    <label for="tgl_keberangkatan">Tanggal Keberangkatan</label>
-    <input type="text" class="form-control" name="tgl_keberangkatan" value="" id="tgl_keberangkatann" aria-describedby="emailHelp">
- 	</div>
-  <div class="form-group col">
-      <label for="kelas_kereta">Kelas Kereta</label>
-      <select id="kelas_kereta" class="form-control">
-        <option selected>Eksekutif</option>
-        <option>Bisnis</option>
-        <option>Priority</option>
-        <option>Ekonomi</option>
-      </select>
-    </div>
-  <button type="submit" value="Pesan" class="btn btn-primary">Pesan</button>
-</form>
+        <table align="center">
+          <tr valign="baseline">
+            <td nowrap align="right">Nama Kereta:</td>
+            <td valign="baseline"><table>
+              <tr>
+                <td><input type="radio" name="nama_kereta" value="" >
+                  Kahuripan</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="nama_kereta" value="" >
+                  Pasundan</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="nama_kereta" value="" >
+                  Serayu</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="nama_kereta" value="" >
+                  Jayabaya</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="nama_kereta" value="" >
+                  Argo Wilis</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Kota Asal:</td>
+            <td><input type="text" name="kota_asal" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Kota Tujuan:</td>
+            <td><input type="text" name="kota_tujuan" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Jam Keberangkatan:</td>
+            <td valign="baseline"><table>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  08:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  10:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  12:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  14:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  15:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  17:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  18:00</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="jam_keberangkatan" value="" >
+                  20:00</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Tanggal Keberangkatan:</td>
+            <td><input type="text" name="tgl_keberangkatan" value="" size="32"></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">Kelas Kereta:</td>
+            <td valign="baseline"><table>
+              <tr>
+                <td><input type="radio" name="kelas_kereta" value="" >
+                  Eksekutif</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="kelas_kereta" value="" >
+                  Bisnis</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="kelas_kereta" value="" >
+                  Priority</td>
+              </tr>
+              <tr>
+                <td><input type="radio" name="kelas_kereta" value="" >
+                  Ekonomi</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr valign="baseline">
+            <td nowrap align="right">&nbsp;</td>
+            <td><input type="submit" value="Pesan"></td>
+          </tr>
         </table>
         <input type="hidden" name="MM_insert" value="form1">
       </form>

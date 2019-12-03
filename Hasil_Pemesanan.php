@@ -31,26 +31,11 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-$maxRows_Recordset1 = 10;
-$pageNum_Recordset1 = 0;
-if (isset($_GET['pageNum_Recordset1'])) {
-  $pageNum_Recordset1 = $_GET['pageNum_Recordset1'];
-}
-$startRow_Recordset1 = $pageNum_Recordset1 * $maxRows_Recordset1;
-
 mysql_select_db($database_koneksi, $koneksi);
-$query_Recordset1 = "SELECT * FROM jadwal";
-$query_limit_Recordset1 = sprintf("%s LIMIT %d, %d", $query_Recordset1, $startRow_Recordset1, $maxRows_Recordset1);
-$Recordset1 = mysql_query($query_limit_Recordset1, $koneksi) or die(mysql_error());
+$query_Recordset1 = "SELECT jadwal.kode_pemesanan, jadwal.harga FROM jadwal";
+$Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
-
-if (isset($_GET['totalRows_Recordset1'])) {
-  $totalRows_Recordset1 = $_GET['totalRows_Recordset1'];
-} else {
-  $all_Recordset1 = mysql_query($query_Recordset1);
-  $totalRows_Recordset1 = mysql_num_rows($all_Recordset1);
-}
-$totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
+$totalRows_Recordset1 = mysql_num_rows($Recordset1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,8 +58,8 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
     	<img src="images/Logo.jpg" class="logo" alt="KitaBisa">
         <div class="menu-atas">
         	<ul>
-            	<li><a class="active" href="registration.php">Daftar</a></li>
-     			<li><a class="active" href="login.php">Masuk</a></li>
+            	<li><a class="active" href="index.php">Keluar</a></li>
+				<li><a class="active" href="home.php">Beranda</a></li>
    		    </ul>
         </div>
 </div>
@@ -84,7 +69,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
     	<li><a href="Pemesanan.php">Pemesanan</a></li>
         <li><a href="schedule.php">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
-        <li><a href="#">Pengaturan</a></li>
+        <li><a href="setting.php">Pengaturan</a></li>
     </ul>
 </div>
 <div id="content">
@@ -93,6 +78,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Hasil</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+       
       <table class="table table-bordered table-dark">
       <thead>
         <tr>
