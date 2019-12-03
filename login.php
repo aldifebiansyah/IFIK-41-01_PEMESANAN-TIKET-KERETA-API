@@ -90,7 +90,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<img src="images/kereta api.png" class="bg">
     <div class="bs-example">
 	<div class="col-md-8 col-md-offset-2">
-	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Login</h2></div>
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Masuk</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
         <table align="center">
@@ -104,7 +104,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
           </tr>
           <tr valign="baseline">
             <td nowrap align="right">&nbsp;</td>
-            <td><input type="submit" value="Login"></td>
+            <td><input type="submit" value="Masuk"></td>
           </tr>
         </table>
         <input type="hidden" name="MM_insert" value="form1">

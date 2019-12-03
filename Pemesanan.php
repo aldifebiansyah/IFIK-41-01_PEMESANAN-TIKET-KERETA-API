@@ -117,7 +117,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Pemesanan</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <form method="post" name="form1" action="<?php echo $editFormAction; ?>">
-        <table align="center" bgcolor="#0099FF">
+        <table align="center" bgcolor="transparent">
   <div class="form-group col">
       <label for="inputState">Nama Kereta</label>
       <select id="inputState" class="form-control">
@@ -162,7 +162,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
         <option>Ekonomi</option>
       </select>
     </div>
-  <button type="submit" value="Pesan" class="btn btn-primary">Submit</button>
+  <button type="submit" value="Pesan" class="btn btn-dark">Cari</button>
 </form>
         </table>
         <input type="hidden" name="MM_insert" value="form1">

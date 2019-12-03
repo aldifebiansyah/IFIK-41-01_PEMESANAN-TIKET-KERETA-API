@@ -45,7 +45,7 @@
     <label for="email">Masukkan Email :</label>
     <input type="email" class="form-control" name="email" value="" id="email" aria-describedby="emailHelp">
   </div>
-  <button type="submit" value="Daftar" class="btn btn-primary">Dapatkan Kata Sandi</button>
+  <button type="submit" value="Daftar" class="btn btn-dark">Dapatkan Kata Sandi</button>
   </table>
   <input type="hidden" name="MM_insert" value="form1" />
 </form>

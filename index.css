@@ -115,37 +115,6 @@
     margin:0 auto;
 }
 
-#content #myCarousel .pengaturan ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: transparent;
-   height: 90%;  
-}
-
-#content #myCarousel .pengaturan li a {
-  display: block;
-  color: #FFFFFF;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-#content #myCarousel .pengaturan li a:hover {
-  background-color: #000000;
-  background-image: linear-gradient(#000000, #FF4500);
-  color: white;
-}
-
-#content #myCarousel .pengaturan .active {
-  background-color: transparent;
-  color: white;
-}
-
-#content #myCarousel .pengaturan li{
-	text-align:left;
-}
-
 @media screen and (max-width: 100%) {
   #menu-samping, #content {
     width: 100%;

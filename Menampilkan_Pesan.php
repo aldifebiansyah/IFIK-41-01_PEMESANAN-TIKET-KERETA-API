@@ -93,7 +93,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 	<div class="col-md-8 col-md-offset-2">
 	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Hasil</h2></div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <table border="1">
+      <table class="table table-bordered table-dark">
         <tr>
           <td>Nama Kereta</td>
           <td>Kota Asal</td>

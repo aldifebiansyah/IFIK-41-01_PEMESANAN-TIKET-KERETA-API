@@ -93,11 +93,11 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<img src="images/kereta api.png" class="bg">
     <div class="bs-example">
 	<div class="col-md-8 col-md-offset-2">
-	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Registrasi</h2></div>
+	<div align="center" style="position:absolute;top:-800px;color:#FFF"><h2>Daftar</h2></div>
   <br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
-  <table align="center" bgcolor="#0099FF">
+  <table align="center">
   <div class="form-group">
     <label for="noktp">No KTP :</label>
     <input type="text" class="form-control" name="nik" value="" id="noktp" aria-describedby="emailHelp">
@@ -118,7 +118,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <label for="password">Password :</label>
     <input type="text" class="form-control" name="password" value="" id="password" aria-describedby="emailHelp">
   </div>
-  <button type="submit" value="Daftar" class="btn btn-primary">Daftar</button>
+  <button type="submit" value="Daftar" class="btn btn-dark">Daftar</button>
 
         </table>
         <input type="hidden" name="MM_insert" value="form1">
