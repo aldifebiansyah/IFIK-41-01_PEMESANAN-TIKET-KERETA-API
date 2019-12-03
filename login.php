@@ -36,22 +36,28 @@ if (isset($_SERVER['QUERY_STRING'])) {
   $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
   $insertSQL = sprintf("INSERT INTO registrasi (email, password) VALUES (%s, %s)",
                        GetSQLValueString($_POST['email'], "text"),
                        GetSQLValueString($_POST['password'], "text"));
 
   mysql_select_db($database_koneksi, $koneksi);
   $Result1 = mysql_query($insertSQL, $koneksi) or die(mysql_error());
+
+  $insertGoTo = "index.php";
+  if (isset($_SERVER['QUERY_STRING'])) {
+    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
+    $insertGoTo .= $_SERVER['QUERY_STRING'];
+  }
+  header(sprintf("Location: %s", $insertGoTo));
 }
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_Recordset1 = "SELECT * FROM registrasi";
+$query_Recordset1 = "SELECT registrasi.nik, registrasi.password FROM registrasi";
 $Recordset1 = mysql_query($query_Recordset1, $koneksi) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<link href="index.css" rel="stylesheet" type="text/css">
@@ -103,8 +109,8 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     <label for="password">Password :</label>
     <input type="text" class="form-control" name="password" value="" id="password" aria-describedby="emailHelp">
   </div>
-  <a href="forget-pw.php" style="float:right;color:red">Lupa Kata Sandi !!</a> <br>
-  <button type="submit" value="login" class="btn btn-primary">Login</button>
+  <a href="forget-pw.php" style="float:right;color:red">Lupa Kata Sandi ?</a> <br>
+  <a herf="home.php" button type="submit" value="login" class="btn btn-primary">Masuk</a>
 
         </table>
         <input type="hidden" name="MM_insert" value="form1">
