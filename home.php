@@ -19,6 +19,7 @@
         <div class="menu-atas">
         	<ul>
             	<li><a class="active" href="index.php">Keluar</a></li>
+		<li><a class="active" href="home.php">Beranda</a></li>
    		    </ul>
         </div>
 </div>

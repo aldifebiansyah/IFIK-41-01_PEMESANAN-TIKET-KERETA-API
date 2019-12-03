@@ -19,8 +19,9 @@
     	<img src="images/Logo.jpg" class="logo" alt="KitaBisa">
         <div class="menu-atas">
         	<ul>
-            	<li><a class="active" href="registration.php">Daftar</a></li>
-     			<li><a class="active" href="login.php">Masuk</a></li>
+            	<li><a class="active" href="index.php">Keluar</a></li>
+     			<li><a class="active" href="home.php">Beranda</a></li>
+   		    
    		    </ul>
         </div>
 </div>

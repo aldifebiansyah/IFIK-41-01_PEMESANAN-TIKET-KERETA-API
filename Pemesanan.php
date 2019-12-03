@@ -58,8 +58,9 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
     	<img src="images/Logo.jpg" class="logo" alt="KitaBisa">
         <div class="menu-atas">
         	<ul>
-            	<li><a class="active" href="registration.php">Daftar</a></li>
-     			<li><a class="active" href="login.php">Masuk</a></li>
+            	<li><a class="active" href="index.php">Keluar</a></li>
+     			<li><a class="active" href="home.php">Beranda</a></li>
+   		    
    		    </ul>
         </div>
 </div>
@@ -67,7 +68,7 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 <div id="menu-samping">
 	<ul>
     	<li><a href="Pemesanan.php">Pemesanan</a></li>
-        <li><a href="schedule-nonlogin.php">Jadwal</a></li>
+        <li><a href="schedule.php">Jadwal</a></li>
         <li><a href="ticket.php">Riwayat</a></li>
         <li><a href="setting.php">Pengaturan</a></li>
     </ul>

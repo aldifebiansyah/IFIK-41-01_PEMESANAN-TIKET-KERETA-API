@@ -73,6 +73,7 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
         <div class="menu-atas">
         	<ul>
             	<li><a class="active" href="index.php">Keluar</a></li>
+		<li><a class="active" href="home.php">Beranda</a></li>
    		    </ul>
         </div>
 </div>
